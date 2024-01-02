@@ -2,3 +2,21 @@ changelog:
   exclude:
     labels:
       - tagpr
+<<<<<<< HEAD
+=======
+  categories:
+    - title: Breaking Changes 🛠
+      labels:
+        - major
+        - "breaking change"
+    - title: Exciting New Features 🎉
+      labels:
+        - minor
+        - enhancement
+    - title: Bug Fix 🐛
+      labels:
+        - bugfix
+    - title: Other Changes
+      labels:
+        - "*"
+>>>>>>> parent of 1691074 (add new release ci)
