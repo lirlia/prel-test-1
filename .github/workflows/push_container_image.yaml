@@ -38,11 +38,21 @@ jobs:
         run: |
           RELEASE_ID="${{ github.ref }}"
           RELEASE_ID="${RELEASE_ID#refs/tags/}"
-          BODY=$(gh release view ${RELEASE_ID} --json body -q '.body')
           IMAGE="ghcr.io/lirlia/prel:${RELEASE_ID}"
-          NEW_BODY="${BODY}\n\n## Container Image\n\n\`\`\`bash\ndocker pull ${IMAGE}\n\`\`\`"
+          gh release view ${RELEASE_ID} --json body -q '.body' > note.md
 
-          gh release edit "$RELEASE_ID" --notes "$NEW_BODY"
+          cat << EOF > note.md
+          $(cat note.md)
+
+          ## Container Image
+
+          \`\`\`bash
+          docker pull ${IMAGE}
+          \`\`\`
+
+          EOF
+
+          gh release edit "$RELEASE_ID" --notes-file note.md
 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
