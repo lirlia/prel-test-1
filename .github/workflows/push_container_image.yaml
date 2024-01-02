@@ -37,6 +37,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           RELEASE_ID="${{ github.ref }}"
+          RELEASE_ID="${RELEASE_ID#refs/tags/}"
           BODY=$(gh release view ${RELEASE_ID} --json body -q '.body')
           IMAGE="ghcr.io/lirlia/prel:${RELEASE_ID}"
           NEW_BODY="${BODY}\n\n## Container Image\n\n\`\`\`bash\ndocker pull ${IMAGE}\n\`\`\`"
