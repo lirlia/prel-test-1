@@ -42,7 +42,7 @@ jobs:
           IMAGE="ghcr.io/lirlia/prel:${RELEASE_ID}"
           NEW_BODY="${BODY}\n\n## Container Image\n\n\`\`\`bash\ndocker pull ${IMAGE}\n\`\`\`"
 
-          gh release edit "$RELEASE_ID" --body "$NEW_BODY"
+          gh release edit "$RELEASE_ID" --notes "$NEW_BODY"
 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
