@@ -42,3 +42,6 @@ jobs:
           NEW_BODY="${BODY}\n\n## Container Image\n\n\`\`\`bash\ndocker pull ${IMAGE}\n\`\`\`"
 
           gh release edit "$RELEASE_ID" --body "$NEW_BODY"
+
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
