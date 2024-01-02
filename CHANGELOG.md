@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.0.2](https://github.com/lirlia/prel-test-1/compare/v0.0.1...v0.0.2) - 2024-01-02
+### Other Changes
+- update release ci by @lirlia in https://github.com/lirlia/prel-test-1/pull/4
+- add by @lirlia in https://github.com/lirlia/prel-test-1/pull/7
+
 ## [v0.3.0](https://github.com/lirlia/prel/compare/v0.2.3...v0.3.0) - 2024-01-02
 ### Exciting New Features 🎉
 - feature: add mobile device css by @lirlia in https://github.com/lirlia/prel/pull/36
