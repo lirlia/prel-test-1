@@ -33,3 +33,4 @@ jobs:
         extra_files: LICENSE README.md
         build_flags: "-trimpath"
         ldflags: "-s -w"
+        asset_name: "prel-${{ matrix.goos }}-${{ matrix.goarch }}.tar.gz"
